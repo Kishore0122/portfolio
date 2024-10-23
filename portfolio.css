@@ -1130,3 +1130,97 @@ color: #0ef;
       stroke-dashoffset: -440;
     }
   }
+
+/* For mobile devices */
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 15px 5%;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .home-content h1 {
+        font-size: 40px;
+    }
+
+    .home-content h3 {
+        font-size: 24px;
+    }
+
+    .home-content p {
+        font-size: 16px;
+    }
+
+    .about-img img {
+        width: 80%;
+        height: auto;
+    }
+
+    .about-text h2 {
+        font-size: 40px;
+    }
+
+    .about-text h4 {
+        font-size: 22px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr;
+        padding: 0 5%;
+    }
+
+    .portfolio-content {
+        grid-template-columns: 1fr;
+        padding: 0 5%;
+    }
+
+    .contact-text h2 {
+        font-size: 40px;
+    }
+
+    .contact-list li {
+        font-size: 16px;
+    }
+
+    .contact-form form input,
+    .contact-form form textarea {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .contact-form form .send {
+        padding: 12px 40px;
+        font-size: 16px;
+    }
+}
+
+/* For smaller mobile devices */
+@media screen and (max-width: 480px) {
+    .home-content h1 {
+        font-size: 32px;
+    }
+
+    .home-content h3 {
+        font-size: 20px;
+    }
+
+    .about-text h2 {
+        font-size: 32px;
+    }
+
+    .services-list div {
+        padding: 20px;
+    }
+
+    .contact-text h2 {
+        font-size: 32px;
+    }
+}
