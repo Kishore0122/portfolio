@@ -101,7 +101,7 @@ color: #0ef;
 }
 .home {
     position: relative;
-    width: 100%;
+    width: 100.2%;
     height: 100vh;
     background-image: url(k.png);
     background-size: cover;
@@ -164,7 +164,7 @@ color: #0ef;
     border: 2px solid #0ef;
     border-radius: 50%;
     font-size: 20px;
-    color: #0ef;
+    color: white;
     text-decoration: none;
     transition: .5s ease;
     opacity: 0;
@@ -174,15 +174,21 @@ color: #0ef;
 }
 
 .home-sci a:hover {
+    border: 2px solid white;
     background-color: #0ef;
     color: black;
-    box-shadow: 0 0 20px #0ef;
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan,
+    0 0 50px cyan,
+    0 0 100px cyan,
+    0 0 200px cyan;
 }
 
 .btn-box {
     display: inline-block;
     padding: 12px 28px;
     background: #0ef;
+    border: 3px solid white;
     border-radius: 40px;
     font-size: 16px;
     color: black;
@@ -223,7 +229,7 @@ color: #0ef;
 }
 
 .about-img img:hover {
-    transform:translate(-30px);
+    transform:scale(1.1);
     transition:  .5s;
     box-shadow: 0 0 5px #0ef,
                 0 0 25px #0ef,
@@ -281,6 +287,7 @@ color: #0ef;
     background-color: transparent;
     padding: 40px;
     font-size: 13px;
+    border: 3px solid aqua;
     border-radius: 20px;
     transition: background 0.5s, transform 0.5s;
     box-shadow: 1px 1px 20px #012290f7,
@@ -309,6 +316,7 @@ color: #0ef;
     display: inline-block;
     padding: 12px 28px;
     background-color: #0ef;
+    border: 3px solid white;
     border-radius: 40px;
     font-size: 16px;
     color: black;
@@ -374,7 +382,8 @@ color: #0ef;
 }
 /* Services section */
 .services-list div:hover {
-    transform: translateY(-10px);
+   transform: translateY(-30px);
+   
 }
 
 /* Skills section */
@@ -393,14 +402,23 @@ color: #0ef;
 .professional-skills {
     background-color: #051129;
     padding: 40px;
+    border: 3px solid white;
     border-radius: 20px;
 }
+.technical-skills, .professional-skills {
+    transition: transform 0.3s ease-in-out;
+}
 
+.technical-skills:hover, .professional-skills:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 0 5px cyan,
+    0 0 25px violet,
+    0 0 50px cyan,
+    0 0 100px white;
+}
 .heading {
     text-align: center;
-    text-decoration: underline;
-    text-underline-offset: 10px;
-    text-decoration-thickness: 5px;
+    font-size: 25px;
     margin-bottom: 50px;
 }
 
@@ -609,13 +627,14 @@ color: #0ef;
 .portfolio-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 0 20px;
+    gap: 10px;
+    padding: 3px 20px;
 }
 
 .row {
     position: relative;
     overflow: hidden;
+    border: 2px solid aqua;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -637,7 +656,7 @@ color: #0ef;
 .layer {
     width: 100%;
     height: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 238, 255, 0.8));
+    background: linear-gradient(rgba(0, 0, 0, 0.786), rgba(0, 238, 255, 0.885));
     position: absolute;
     left: 0;
     bottom: 0;
@@ -763,7 +782,7 @@ color: #0ef;
     border: 2px solid #0ef;
     border-radius: 50%;
     font-size: 20px;
-    color: #0ef;
+    color: white;
     text-decoration: none;
     margin: 30px 15px 30px 0;
     transition: 0.5s ease;
@@ -773,13 +792,19 @@ color: #0ef;
 }
 
 .contact-icons a:hover {
+    border: 2px solid white;
     background: #0ef;
     color: #000;
-    box-shadow: 0 0 20px #0ef;
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan,
+    0 0 50px cyan,
+    0 0 100px cyan,
+    0 0 200px cyan;
 }
 
 .contact-form form {
     position: relative;
+    right: 10px;
 }
 
 .contact-form form input,
@@ -802,6 +827,8 @@ color: #0ef;
 }
 
 .contact-form form .send {
+    position: relative;
+    border: 3px solid white;
     display: inline-block;
     padding: 14px 60px;
     background: #0ef;
@@ -816,8 +843,15 @@ color: #0ef;
 }
 
 .contact-form form .send:hover {
-    box-shadow: 0 0 20px #0ef;
-    transform: scale(1.1);
+    cursor: pointer;
+    background-color: #0ef;
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan,
+    0 0 50px cyan,
+    0 0 100px cyan,
+    0 0 200px cyan;
+    font-weight: bold;
+    
 }
 
 /* Animations */
@@ -913,7 +947,7 @@ color: #0ef;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color:#0ef;
+            background-color:black;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -1130,6 +1164,32 @@ color: #0ef;
       stroke-dashoffset: -440;
     }
   }
+  @media screen and (max-width: 1024px) {
+    .home {
+        padding: 70px 5% 0;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+        padding: 70px 5%;
+    }
+
+    nav span {
+        left: auto;
+        right: 5%;
+    }
+}
 
 /* For mobile devices */
 @media screen and (max-width: 768px) {
@@ -1223,4 +1283,52 @@ color: #0ef;
     .contact-text h2 {
         font-size: 32px;
     }
+}
+.btn{
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    width: 160px;
+    height: 50px;
+    background-color: aqua;
+    padding: 12px ;
+    border: 3px solid white;
+    border-radius: 30px;
+    bottom: 50px;
+    display:flex;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: #0ef;
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan,
+    0 0 50px cyan,
+    0 0 100px cyan,
+    0 0 200px cyan;
+    font-weight: bold;
+    transform: scale(1.1);
+    color: black;
+}
+.view-counter {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 238, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 238, 255, 0.2);
+    color: #00eeff;
+    font-size: 14px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.view-counter i {
+    font-size: 18px;
 }
