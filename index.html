@@ -331,50 +331,86 @@
         <span id="viewCount">0</span> views
     </div>
     <script>
-        function updateViewCount() {
-            let views = localStorage.getItem('portfolioViews');
-            // Check if this is the first visit
-            if (!views) {
-                views = 1;
-            } else {
-                // Only increment if it's a new session
-                if (!sessionStorage.getItem('counted')) {
-                    views = parseInt(views) + 1;
-                }
-            }
-            // Mark this session as counted
-            sessionStorage.setItem('counted', 'true');
-            // Update localStorage and display
-            localStorage.setItem('portfolioViews', views);
-            document.getElementById('viewCount').textContent = views.toLocaleString();
+// Function to format numbers with commas for better readability
+function formatNumber(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+// Function to update view count using a counter API
+async function updateViewCount() {
+    const COUNTER_API_URL = 'https://api.countapi.xyz';
+    const NAMESPACE = 'balakishore-portfolio';
+    const KEY = 'portfolio-visits';
+
+    try {
+        // First, try to increment the counter
+        const response = await fetch(`${COUNTER_API_URL}/hit/${NAMESPACE}/${KEY}`);
+        const data = await response.json();
+        
+        // Update the display with the new count
+        const viewCountElement = document.getElementById('viewCount');
+        if (viewCountElement) {
+            viewCountElement.textContent = formatNumber(data.value);
         }
-        // Call the function when the page loads
-        window.addEventListener('load', function () {
-            const loader = document.querySelector('.loader-wrapper');
-            loader.style.display = 'none';
-            updateViewCount(); // Add view counter update here
-        });
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbydA7-R6Fk4a_WxlKbsQ9p4rNaLWsAxH6-D5_3eZZEV380W6Coa0UXgSaRtjnrNUzkRZQ/exec';
-        const form = document.forms['submit-to-google-sheet'];
-        const statusMessage = document.getElementById("status-message");
+    } catch (error) {
+        console.error('Error updating view count:', error);
+        // Fallback to show a default message if the API fails
+        const viewCountElement = document.getElementById('viewCount');
+        if (viewCountElement) {
+            viewCountElement.textContent = '—';
+        }
+    }
+}
 
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            statusMessage.textContent = "Sending...";
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    statusMessage.textContent = "Message sent successfully";
-                    form.reset();
-                    setTimeout(() => {
-                        statusMessage.textContent = "";
-                    }, 5000);
-                })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                    statusMessage.textContent = "An error occurred. Please try again.";
-                });
-        });
+// Update view count when page loads
+window.addEventListener('load', function() {
+    // Remove loader
+    const loader = document.querySelector('.loader-wrapper');
+    if (loader) {
+        loader.style.display = 'none';
+    }
+    
+    // Update view count
+    updateViewCount();
+});
 
+// Add error handling for the view counter element
+document.addEventListener('DOMContentLoaded', function() {
+    const viewCounter = document.querySelector('.view-counter');
+    if (viewCounter) {
+        viewCounter.setAttribute('title', 'Total Portfolio Views');
+    }
+});
+// Call the function when the page loads
+window.addEventListener('load', function() {
+    const loader = document.querySelector('.loader-wrapper');
+    if (loader) {
+        loader.style.display = 'none';
+    }
+    updateViewCount();
+});
+
+// Keep the existing form submission code
+const scriptURL = 'https://script.google.com/macros/s/AKfycbydA7-R6Fk4a_WxlKbsQ9p4rNaLWsAxH6-D5_3eZZEV380W6Coa0UXgSaRtjnrNUzkRZQ/exec';
+const form = document.forms['submit-to-google-sheet'];
+const statusMessage = document.getElementById("status-message");
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    statusMessage.textContent = "Sending...";
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+            statusMessage.textContent = "Message sent successfully";
+            form.reset();
+            setTimeout(() => {
+                statusMessage.textContent = "";
+            }, 5000);
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            statusMessage.textContent = "An error occurred. Please try again.";
+        });
+});
         // Typing animation
         const typed = new Typed('.text', {
             strings: ['Full Stack Developer', 'Web Designer', 'UI/UX Designer'],
