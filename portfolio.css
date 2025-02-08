@@ -1572,18 +1572,6 @@ color: #0ef;
          box-shadow: 0 0 60px #0ef;
          
      }
-     .profile2{
-         position: absolute;
-         top: 69%;
-         left: 10%;
-         opacity: 0;
-         transition: all 0.5s ease-in-out; 
-     }
-     .profile2:hover{
-         opacity: 1;
-         cursor: pointer;
-         transform: scale(1.1);
-     }
      .home {
          position: absolute;
          width: 110%;
