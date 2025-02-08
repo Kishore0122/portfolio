@@ -1515,8 +1515,8 @@ color: #0ef;
      .navbar a{
          position: relative;
          left: -10%;
-      padding: 8px;
-      font-size: 15px;
+      padding: 5px;
+      font-size: 10px;
       max-width: 100px;
      }
      nav span {
@@ -1574,7 +1574,7 @@ color: #0ef;
      }
      .profile2{
          position: absolute;
-         top: 70%;
+         top: 69%;
          left: 10%;
          opacity: 0;
          transition: all 0.5s ease-in-out; 
@@ -1585,8 +1585,8 @@ color: #0ef;
          transform: scale(1.1);
      }
      .home {
-         position: relative;
-         width: 100.2%;
+         position: absolute;
+         width: 100%;
          height: 60vh;
          background-image: url(assets/k.png);
          background-color: aqua;
