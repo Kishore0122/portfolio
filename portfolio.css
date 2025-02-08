@@ -1586,7 +1586,7 @@ color: #0ef;
      }
      .home {
          position: absolute;
-         width: 100%;
+         width: 110%;
          height: 60vh;
          background-image: url(assets/k.png);
          background-color: aqua;
