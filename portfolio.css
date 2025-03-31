@@ -1169,6 +1169,11 @@ color: #0ef;
 
 /* For mobile devices */
 @media screen and (max-width: 768px) {
+    body{
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
     .header {      
        max-width: 100%;
        height: 50px;
@@ -1474,6 +1479,8 @@ color: #0ef;
     left: 4%;
     transition: transform 0.3s ease-in-out;
     top: 30px;
+    box-shadow: 0px 0px 10px aqua,
+    0px 0px 15px aqua;
   }
   .view:hover{
     cursor: pointer;
@@ -1548,203 +1555,129 @@ color: #0ef;
     padding: 20px;
     border-radius: 20px;
 }
-@media (max-width: 479px){
-    .navbar a{
-        font-size: 18px;
-        padding: 10px;
+  .projects{
+    display: flex;
+    padding: 10px;
+    font-size:15px;
+    font-weight: bold;
+    background-color: aqua;
+    border: 3px solid white;
+    border-radius: 20px;
+    position: relative;
+    left: 4%;
+    transition: transform 0.3s ease-in-out;
+    top: 30px;
+    box-shadow: 0px 0px 10px aqua,
+    0px 0px 15px aqua;
+  }
+  .projects:hover{
+    cursor: pointer;
+    background-color: #0ef;
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan,
+    0 0 50px cyan,
+    0 0 100px cyan,
+    0 0 200px cyan;
+    font-weight: bold;
+    transform: scale(1.1);
+    color: black;
+  }
+  @media screen and (max-width: 450px) {
+    body {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
     }
-    .home {
-        position: relative;
-        width: 200%;
-        height: 100vh;
-        background-image: url(assets/k.png);
-        background-color: aqua;
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        justify-content: space-between;
+    
+    .header {
+        height: 45px;
+    }
+    
+    .navbar {
+        flex-direction: row;
         align-items: center;
-        padding: 70px 10% 0;
-        
+        padding: 5px 0;
+    }
+    
+    .navbar a {
+        font-size: 14px;
+        padding: 6px;
+        max-width: 90px;
+        left: 10;
+    }
+    
+    .about-img img {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .about-text h2 {
+        font-size: 32px;
+    }
+    
+    .about-text h4 {
+        font-size: 18px;
+    }
+    
+    .about-text p {
+        font-size: 14px;
+    }
+    
+    .services-list, .portfolio-content {
+        grid-template-columns: 1fr;
+        padding: 0 3%;
+    }
+    
+    .contact-text h2 {
+        font-size: 32px;
+    }
+    
+    .contact-list li {
+        font-size: 14px;
+    }
+    
+    .contact-form form input,
+    .contact-form form textarea {
+        padding: 12px;
+        font-size: 12px;
+    }
+    
+    .contact-form form .send {
+        padding: 10px 30px;
+        font-size: 14px;
+    }
+    
+    .home {
+        width: 100%;
+        height: 50vh;
+        padding: 50px 5%;
     }
     
     .home-content {
-        max-width: 600px;
+        max-width: 100%;
+        text-align: center;
     }
     
     .home-content h3 {
-        font-size: 32px;
-        font-weight: 700;
-        opacity: 0;
-        animation: slideBottom 1s ease forwards;
-        animation-delay: .7s;
-    }
-    
-    .home-content h3:nth-of-type(2) {
-        margin-bottom: 30px;
-        animation: slideTop 1s ease forwards;
-        animation-delay: .7s;
-    }
-    
-    .home-content h3 span {
-        color: #0ef;
+        font-size: 18px;
     }
     
     .home-content h1 {
-        font-size: 56px;
-        font-weight: 700;
-        margin: -3px 0;
-        opacity: 0;
-        animation: slideRight 1s ease forwards;
-        animation-delay: 1s;
+        font-size: 36px;
     }
     
     .home-content p {
-        font-size: 20px;
-        opacity: 0;
-        animation: slideLeft 1s ease forwards;
-        animation-delay: 1s;
+        font-size: 13px;
     }
     
     .home-sci {
-        margin-top: 30px;
+        margin-top: 20px;
     }
     
     .home-sci a {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 40px;
-        height: 40px;
-        background: transparent;
-        border: 2px solid #0ef;
-        border-radius: 50%;
-        font-size: 20px;
-        color: white;
-        text-decoration: none;
-        transition: .5s ease;
-        opacity: 0;
-        animation: slideLeft 1s ease forwards;
-        animation-delay: calc(.2s * var(--i));
-        margin: 0 15px 30px 0;
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        margin: 0 10px 20px 0;
     }
-    
-    .home-sci a:hover {
-        border: 2px solid white;
-        background-color: #0ef;
-        color: black;
-        box-shadow: 0 0 5px cyan,
-        0 0 25px cyan,
-        0 0 50px cyan,
-        0 0 100px cyan,
-        0 0 200px cyan;
-    }
-    .about{
-        position: relative;
-        left: 35%;
-        bottom: 20%;
-    }
-    .about-text{
-        position: relative;
-        bottom: 50px;
-        right: 80px;
-        width: 580px;
-    }
-    .about-img img{
-        position: relative;
-        bottom: 50px;
-        right: 100px;
-    }
- .services{
-    position: relative;
-    left: 35%;
-    text-align: center;
-    top: 20%;
- }
- .sub-title{
-    position: relative;
-    font-size: 50px;
-   bottom: 150px;
-   left: 40px;
- }
- .services-list{
-    position: relative;
-    right: 40px;
-    width: 500px;
-    bottom: 200px;
- }
- .skills-container{
-    position: relative;
-    width: 500px;
-    bottom: 200px;
-    left: 100px;
- }
- .skills h2{
-    position: relative;
-    bottom: 150px;
-    text-align: center;
-    left: 200px;
- }
- .main-text h2{
-    font-size: 50px;
-    position: relative;
-    bottom: 350px;
-    left: 150px;
- }
- .row{
-    position: relative;
-    width: 600px;
-    bottom: 400px;
-    left: 50px;
- }
- .portfolio-content{
-    position: relative;
-    padding: 10px;
- }
- .internship{
-    position: relative;
-    bottom: 450px;
- }
- .internship h2{
-    position: relative;
-    bottom: 450px;
-    left: 150px;
- }
- .prodji{
-    position: relative;
-    width: 720px;
-    left: 20px;
- }
- .prodji p{
-    position: relative;
-    width: 650px;
- }
- .teach{
-    position: relative;
-    width: 720px;
-    left: 20px;
- }
- .teach p{
-    position: relative;
-    width: 650px;
- }
- .contact{
-    position: relative;
-    bottom: 400px;
- }
- .contact-text{
-    position: relative;
-    top: 50px;
- }
- .contact-text h2{
-    position: relative;
-    left: 200px;
-    bottom: 100px;
- }
- .contact-form{
-    position: relative;
-    left: 280px;
-    bottom: 500px;
-    width: 450px;
- }
 }
