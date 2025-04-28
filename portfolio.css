@@ -1277,8 +1277,8 @@ nav a:hover {
     color: black;
     padding: 10px 20px;
     position: relative;
-    left: 25%;
-    top: 40%;
+    left: 2%;
+    top: 20px;
     background-color: aqua;
     border: 2px solid white;
     border-radius: 30px;
