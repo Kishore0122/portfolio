@@ -3,7 +3,7 @@
 A personal portfolio website showcasing the skills, projects, and achievements of Bala Kishore, a passionate full-stack developer.
 
 ## 🌐 Live Demo
-[View Portfolio](https://kishore-library.netlify.app/)
+[View Portfolio](https://kishore.is-a.dev/)
 
 ## 📁 Project Structure
 ```
