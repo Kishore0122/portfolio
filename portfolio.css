@@ -323,7 +323,7 @@ nav a:hover {
 .technical-skills,
 .professional-skills {
   background-color: #051129;
-  padding: 40px;
+  padding: 35px;
   border: 3px solid white;
   border-radius: 20px;
   transition: transform 0.3s ease-in-out;
@@ -344,7 +344,7 @@ nav a:hover {
 
 /* Technical skills bars */
 .technical-bars .bar {
-  margin: 40px 0;
+  margin: 30px 0;
 }
 
 .technical-bars .bar:first-child {
@@ -394,15 +394,20 @@ nav a:hover {
   width: 85%;
 }
 .progress-line.javascript span {
-  width: 75%;
+  width: 80%;
 }
 .progress-line.python span {
   width: 80%;
 }
-.progress-line.react span {
+.progress-line.cpp span {
   width: 70%;
 }
-
+.progress-line.react span {
+  width: 80%;
+}
+.progress-line.SQl span {
+  width: 80%;
+}
 /* Radial bars */
 .radial-bars {
   width: 100%;
